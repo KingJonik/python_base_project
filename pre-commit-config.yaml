@@ -1,0 +1,43 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.4.0
+    hooks:
+      - id: check-merge-conflict
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-json
+      - id: pretty-format-json
+        args: [--autofix]
+      - id: mixed-line-ending
+
+  - repo: local
+    hooks:
+      - id: isort
+        name: Run isort
+        language: python
+        types: [python]
+        entry: isort
+        exclude: ^\.venv/
+
+      - id: black
+        name: Run Black
+        language: python
+        types: [python]
+        entry: black
+        exclude: ^\.venv/
+
+      - id: flake8
+        name: Run flake8
+        language: python
+        types: [python]
+        entry: flake8
+        exclude: ^\.venv/
+
+      - id: run-tests
+        name: Run tests
+        entry: bash ./scripts/run_tests.sh
+        language: system
+        always_run: true
+        files: .*.py$
+        exclude: ^\.venv/
