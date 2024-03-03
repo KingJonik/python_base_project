@@ -9,12 +9,12 @@ A base Python project setup through poetry with pytest script and pre-commit hoo
     - Black Formatter
     - Error Lens
     - Indent Rainbow
-    - IntelliCode 
+    - IntelliCode
     - Markdown Preview
 
 ### Getting Started With An Existing Poetry Project
 - **Rename Project:**
-    - This step isn't crucial but if you want to change the name of `python_base_project` then as well as renaming the folder, make sure to give the same name to line 2 of `pyproject.toml`. 
+    - This step isn't crucial but if you want to change the name of `python_base_project` then as well as renaming the folder, make sure to give the same name to line 2 of `pyproject.toml`.
     - If the names differ in the two places then the install command will give an error, should still work, but if you want to avoid the error then match up the names.
 - **Install Dependencies:**
     - `cd` into the top level of the project.
@@ -41,7 +41,11 @@ A base Python project setup through poetry with pytest script and pre-commit hoo
 - Clears up created cache folders.
 
 ### Pre-Commit Hooks
-Custom hooks setup in `pre-commit-config.yaml`. Rejects a commit if any of the following fail:
+Custom hooks setup in `.pre-commit-config.yaml`.
+
+**Do Once:** Upon running `poetry install` inside a `poetry shell`, you'll need to setup pre-commit. To do this, run `poetry install`.
+
+Rejects a commit if any of the following fail:
 - **Downloaded Pre-Commit Hooks:**
     - `merge-conflicts`
     - `trailing-whitespace`
@@ -56,17 +60,13 @@ Custom hooks setup in `pre-commit-config.yaml`. Rejects a commit if any of the f
     - `black` - Formats .py files correctly (will need to re-add-commit if changes are made)
     - `run tests` - Runs the custom test script that cleans up resulting cache files and asses pass/fail.
 
-
-
 ### Poetry How To Setup
 - **cd Into Directory:**
-    - **Add Poetry To A Project:** `poetry init`
-    - **Create New Poetry Project:** `poetry new <project name>`
+    - Add Poetry To A Project: `poetry init`
+    - Create New Poetry Project: `poetry new <project name>`
 - **Add New Dependencies:**
     - Requires poetry shell to be running.
-    - **Main Dependencies:** `poetry add <package name>`
-    - **Dev Dependencies:** `poetry add --dev <package name>`
-
-
-
-
+    - Main Dependencies: `poetry add <package name>`
+    - Dev Dependencies: `poetry add --dev <package name>`
+- **Remove Dependencies:**
+    - `poetry remove <package name>`
