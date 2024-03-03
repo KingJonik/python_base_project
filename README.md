@@ -5,8 +5,8 @@ A base Python project setup through poetry with pytest script and pre-commit hoo
 - **Required:**
     - Python
     - Python Indent
-- **Recommended:**
     - Black Formatter
+- **Recommended:**
     - Error Lens
     - Indent Rainbow
     - IntelliCode
