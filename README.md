@@ -12,13 +12,13 @@ A base Python project setup through poetry with pytest script and pre-commit hoo
     - IntelliCode
     - Markdown Preview
 
-### Getting Started With An Existing Poetry Project
+### Getting Started
 - **Rename Project:**
     - This step isn't crucial but if you want to change the name of `python_base_project` then as well as renaming the folder, make sure to give the same name to line 2 of `pyproject.toml`.
     - If the names differ in the two places then the install command will give an error, should still work, but if you want to avoid the error then match up the names.
 - **Install Dependencies:**
     - `cd` into the top level of the project.
-    - Run `poetry install` - This will create a .venv and poetry.lock file.
+    - Run `bash scripts/setup.sh` - This will create a .venv and poetry.lock file through running poetry install and also initiate pre-commit into the .git hooks folder.
 - **Running:** `poetry shell` - Opens a shell using the created .venv which allows everything in the project to be run.
 - **Project Info:** `poetry env info`
 
@@ -36,6 +36,7 @@ A base Python project setup through poetry with pytest script and pre-commit hoo
 - `pre-commit` - 3.6.2 - For managing multi-langauge pre-commit hooks.
 
 ### Custom Test Runner Script
+Run `bash scripts/run_tests.sh`
 - Runs `pytest` to run all detectable test files.
 - Checks outcome of pytest
 - Clears up created cache folders.
@@ -43,7 +44,7 @@ A base Python project setup through poetry with pytest script and pre-commit hoo
 ### Pre-Commit Hooks
 Custom hooks setup in `.pre-commit-config.yaml`.
 
-**Do Once:** Upon running `poetry install` inside a `poetry shell`, you'll need to setup pre-commit. To do this, run `poetry install`.
+This will be setup by running the above `setup.sh` script in getting started.
 
 Rejects a commit if any of the following fail:
 - **Downloaded Pre-Commit Hooks:**
