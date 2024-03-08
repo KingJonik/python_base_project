@@ -5,6 +5,7 @@ repos:
       - id: check-merge-conflict
       - id: trailing-whitespace
       - id: end-of-file-fixer
+        files: '\.py$|\.sh$'
       - id: check-yaml
       - id: check-json
       - id: pretty-format-json
